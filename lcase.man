@@ -1,0 +1,98 @@
+.\" 
+.\" Copyright (c) 2000 2001 ... 2020 2021
+.\"     John McCue <jmccue@jmcunx.com>
+.\" 
+.\" Permission to use, copy, modify, and distribute this software for any
+.\" purpose with or without fee is hereby granted, provided that the above
+.\" copyright notice and this permission notice appear in all copies.
+.\" 
+.\" THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+.\" WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+.\" MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+.\" ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+.\" WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+.\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+.\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+.\" 
+.TH lcase 1
+.SH NAME
+lcase - change case of characters in a text file
+.SH SYNOPSIS
+lcase [OPTIONS] [FILE...]
+.SH DESCRIPTION
+Changes character case of data in a text file.
+.PP
+If no files (FILE) are specified on the command line or
+if FILE has name "-", stdin (Standard Input) is used.
+.SH OPTIONS
+.TP
+-e file
+Errors written to the file specified, defaults to stderr.
+.TP
+-F
+Flip (revert) character case.
+Change uppercase characters to lowercase,
+lowercase to uppercase.
+.TP
+-f
+Force file create.
+Create file even if the target file exists.
+.TP
+-h
+Show brief help and exit.
+.TP
+-l
+Change uppercase characters to lowercase,
+this is the default action.
+.TP
+-o file
+Write output to the file specified, defaults to stdout.
+.TP
+-U
+Change lowercase characters to uppercase.
+.TP
+-V
+output version information and exit.
+.TP
+Optional, Verbose Level.
+Print information about the run,
+default do not show run messages.
+Can be specified multiple times,
+each specification increases verbose level:
+.nf
+    Level  Meaning
+    -----  -------------------------------------
+    = 0    Do not show any messages, default
+    >= 1   Show headings on stdout as each file
+           is processed
+    >= 2   Show I/O summary
+.fi
+
+.SH DIAGNOSTICS
+Best to use tr(1) if available on your system.
+.PP
+Processes one line at a time, assumes the file is a text file.
+.PP
+Note, if an error occurs while parsing command line
+arguments, errors may NOT be written to the error file
+supplied on the command line.
+
+.SH BUGS
+Do not know of any.
+
+.SH ENVIRONMENT
+none.
+
+.SH ERROR CODES
+.nf
+0 success
+1 processing error or help/rev displayed
+.fi
+
+.SH SEE ALSO
+ed(1),
+ex(1),
+justleft(1),
+rtw(1),
+sed(1),
+tr(1)
