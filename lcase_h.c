@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2000, 2001 ... 2020 2021
+ * Copyright (c) 2000, 2001 ... 2021 2022
  *     John McCue <jmccue@jmcunx.com>
  *
  * Permission to use, copy, modify, and distribute this software for any
@@ -15,11 +15,8 @@
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-/* lcase_h.c -- Show/help routines */
-#ifndef COHERENT
 #ifndef _MSDOS
 #include <sys/param.h>
-#endif 
 #endif 
 
 #include <stdio.h>
@@ -32,11 +29,6 @@
 
 #define USG_MSG_LCASE_1 "\tChange character case of each line in a text file\n"
 #define USG_MSG_LCASE_2 "Note: default is to change characters to lowercase.\n"
-
-char *lcase_h_c="$Id: lcase_h.c,v 3.1 2021/02/21 21:03:35 jmccue Exp $";
-
-extern char *lcase_c;
-extern char *lcase_u_c;
 
 /*
  * show_help() -- displays show_help info and exits
@@ -72,18 +64,9 @@ void show_rev(FILE *fp, char *pname)
 {
 
   fprintf(fp,"%s %s:\n", pname, LIT_REV);
-  fprintf(fp,"\t%s\n", LCASE_H);
-  fprintf(fp,"\t%s\n", lcase_c);
-  fprintf(fp,"\t%s\n", lcase_u_c);
-  fprintf(fp,"\t%s\n", lcase_h_c);
-
-#ifdef J_LIB2M_H
-  fprintf(fp, "\t%s\n", J_LIB2M_H);
-#endif
 
 #ifdef J_LIB2_H
-  fprintf(fp, "\t%s\n", J_LIB2_H);
-  fprintf(fp, "\t     %s %s\n", LIT_INFO_02, j2_get_build());
+  fprintf(fp, "\t%s %s\n", LIT_INFO_02, j2_get_build());
 #endif
 
 #ifdef OSTYPE
@@ -97,5 +80,3 @@ void show_rev(FILE *fp, char *pname)
   exit(EXIT_FAILURE);
 
 } /* show_rev() */
-
-/* END: lcase_h.c */

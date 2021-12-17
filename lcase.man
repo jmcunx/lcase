@@ -1,5 +1,5 @@
 .\" 
-.\" Copyright (c) 2000 2001 ... 2020 2021
+.\" Copyright (c) 2000 2001 ... 2021 2022
 .\"     John McCue <jmccue@jmcunx.com>
 .\" 
 .\" Permission to use, copy, modify, and distribute this software for any
@@ -67,7 +67,6 @@ each specification increases verbose level:
            is processed
     >= 2   Show I/O summary
 .fi
-
 .SH DIAGNOSTICS
 Best to use tr(1) if available on your system.
 .PP
@@ -76,19 +75,15 @@ Processes one line at a time, assumes the file is a text file.
 Note, if an error occurs while parsing command line
 arguments, errors may NOT be written to the error file
 supplied on the command line.
-
 .SH BUGS
 Do not know of any.
-
 .SH ENVIRONMENT
 none.
-
 .SH ERROR CODES
 .nf
 0 success
 1 processing error or help/rev displayed
 .fi
-
 .SH SEE ALSO
 ed(1),
 ex(1),

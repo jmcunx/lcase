@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2000, 2001 ... 2020 2021
+ * Copyright (c) 2000, 2001 ... 2021 2022
  *     John McCue <jmccue@jmcunx.com>
  *
  * Permission to use, copy, modify, and distribute this software for any
@@ -15,11 +15,8 @@
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-/* lcase -- change the case of a string */
-#ifndef COHERENT
 #ifndef _MSDOS
 #include <sys/param.h>
-#endif 
 #endif 
 
 #include <stdio.h>
@@ -36,8 +33,6 @@
 #include "lcase.h"
 
 #define ARGSIZE 81
-
-char *lcase_c="$Id: lcase.c,v 3.1 2021/02/21 21:03:35 jmccue Exp $";
 
 /*
  * get_args() -- load arguments
@@ -268,5 +263,3 @@ int main(int argc, char **argv)
   exit(EXIT_SUCCESS);
 
 } /* main() */
-
-/* END: lcase.c */

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2000, 2001 ... 2020 2021
+ * Copyright (c) 2000, 2001 ... 2021 2022
  *     John McCue <jmccue@jmcunx.com>
  *
  * Permission to use, copy, modify, and distribute this software for any
@@ -17,7 +17,7 @@
 
 #ifndef LCASE_H
 
-#define LCASE_H "$Id: lcase.h,v 3.0 2020/11/23 01:48:19 jmccue Exp $"
+#define LCASE_H "INCLUDED"
 
 #define PROG_NAME "lcase"
 

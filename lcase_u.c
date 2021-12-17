@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2000, 2001 ... 2020 2021
+ * Copyright (c) 2000, 2001 ... 2021 2022
  *     John McCue <jmccue@jmcunx.com>
  *
  * Permission to use, copy, modify, and distribute this software for any
@@ -14,13 +14,9 @@
  * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
-#include <j_lib2m.h>
 
-
-#ifndef COHERENT
 #ifndef _MSDOS
 #include <sys/param.h>
-#endif 
 #endif 
 
 #include <stdio.h>
@@ -31,8 +27,6 @@
 #include <j_lib2.h>
 #include <j_lib2m.h>
 #include "lcase.h"
-
-char *lcase_u_c="$Id: lcase_u.c,v 3.1 2021/02/21 21:03:35 jmccue Exp $";
 
 /*
  * init_finfo() -- initialize out file structure
@@ -74,7 +68,7 @@ int open_in(FILE **in, char *fname, FILE *fp_err)
   
   return((int) TRUE);
 
-} /* END: open_in() */
+} /* open_in() */
 
 /*
  * open_out() -- save the file anem and check status
@@ -109,7 +103,7 @@ int open_out(FILE *wfp, struct s_file_info *f, char *prog_name, int force)
 
   return((int) TRUE);
 
-} /* END: open_out() */
+} /* open_out() */
 
 /*
  * close_in() -- Close an input file
@@ -146,5 +140,3 @@ void close_out(struct s_file_info *f)
   f->fname = (char *) NULL;
 
 } /* close_out() */
-
-/* END: lcase_u.c */
