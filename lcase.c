@@ -260,6 +260,8 @@ int main(int argc, char **argv)
   /*** done ***/
   close_out(&(w.out));
   close_out(&(w.err));
+  if (w.prog_name != (char *) NULL)
+    free(w.prog_name);
   exit(EXIT_SUCCESS);
 
 } /* main() */
