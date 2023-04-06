@@ -1,6 +1,6 @@
 # for lcase
 #
-# Copyright (c) 2022 2023
+# Copyright (c) 2022 2023 2024
 #     John McCue <jmccue@jmcunx.com>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -68,7 +68,9 @@ CTAGS=ctags
 ECHO=echo
 GZIP=gzip
 LINK=cc
-LIBS=-lj_lib2
+#FOUND_JLIB#LIBS=-lj_lib2
+#NO_JLIB#LIBS=
+#FOUND_JLIB#HJLIB=-DHAVE_JLIB
 MV=mv
 RM=rm -f
 STRIP=strip
@@ -77,16 +79,24 @@ MKDIR=mkdir
 EXE=
 OBJ=.o
 
-#--- for Prod
-CFLAGS=-O1 -c $(WALL) -IINCJLIB -DOSTYPE="\"$(OSDESC)\""
-LFLAGS=-O1 $(WALL) -LJLIBLOC -o lcase $(LIBS)
+#--- for prod
+#FOUND_JLIB#CFLAGS=-O1 -c $(WALL) $(HJLIB) -IINCJLIB -DOSTYPE="\"$(OSDESC)\""
+#FOUND_JLIB#LFLAGS=-O1 $(WALL) -LJLIBLOC -o lcase $(LIBS)
+#NO_JLIB#CFLAGS=-O1 -c $(WALL) -DOSTYPE="\"$(OSDESC)\""
+#NO_JLIB#LFLAGS=-O1 $(WALL) -o lcase $(LIBS)
 
 #--- for valgrind
-#CFLAGS=-g -O0 -c $(WALL) -IINCJLIB -DOSTYPE="\"$(OSDESC)\""
-#LFLAGS=-g -O0 $(WALL) -LJLIBLOC -o lcase $(LIBS)
+#VALGRIND##FOUND_JLIB#CFLAGS=-O0 -g -c $(WALL) $(HJLIB) -IINCJLIB -DOSTYPE="\"$(OSDESC)\""
+#VALGRIND##FOUND_JLIB#LFLAGS=-O0 -g $(WALL) -LJLIBLOC -o lcase $(LIBS)
+#VALGRIND##NO_JLIB#CFLAGS=-O0 -g -c $(WALL) -DOSTYPE="\"$(OSDESC)\""
+#VALGRIND##NO_JLIB#LFLAGS=-O0 -g -$(WALL) -o lcase $(LIBS)
 
-ALL_OBJ=lcase$(OBJ) lcase_h$(OBJ) lcase_u$(OBJ)
-ALL_C=lcase.c lcase_h.c lcase_u.c
+#--- continue on
+#NO_JLIB#JCC=lcase_j.c
+#NO_JLIB#JCOB=lcase_j$(OBJ)
+
+ALL_OBJ=lcase$(OBJ) lcase_h$(OBJ) $(JCOB) lcase_u$(OBJ)
+ALL_C=lcase.c lcase_h.c $(JCC) lcase_u.c
 ALL_H=lcase.h
 
 #
